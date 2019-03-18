@@ -1,0 +1,42 @@
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.tictac {
+    width: 330px; 
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;  
+    border: 5px dashed black; 
+}
+
+.row1, .row4, .row7 {
+    border: 5px solid #000000;
+    height: 100px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.column1, .column4, .column7 {
+    border: 5px solid black;
+    width: 100px;
+}
+
+
