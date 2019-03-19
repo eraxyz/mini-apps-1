@@ -1,13 +1,13 @@
-class Controller extends App{
+class Controller {
 
     constructor() {
-        super();       
+        this.view = new View();    
     };
     
-    listener() {
+    initialize() {
         document.addEventListener('click', (event) => (event.target.classList[0] === 'restart' ? 
-        view.reset(true) : (event.target.classList[0] === 'submit') ? 
-        view.setPlayers() : (event.target.classList.length === 3) ? 
-        view.addPlay(event.target) : null))
+        this.view.reset(true) : (event.target.classList[0] === 'submit') ? 
+        this.view.setPlayers() : (event.target.classList.length === 3) ? 
+        this.view.addPlay(event.target) : null))
     };
 }

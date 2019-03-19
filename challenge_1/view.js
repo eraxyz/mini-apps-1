@@ -1,34 +1,37 @@
-class View extends App{
+class View {
 
     constructor() {
-        super();
+        this.model = new Model();
     };
 
     addPlay(target) {
         let invalidPlay = false;
-        (target.textContent === "") ? (Model.state.playerOne) ? target.textContent = Model.state.first : target.textContent = Model.state.second : invalidPlay = true;
-        if (!invalidPlay) Model.checkForWin(target);
-        if (Model.state.win || Object.keys(Model.state.board).length === 9) Model.endGame(); 
+        (target.textContent === "") ? (this.model.state.playerOne) ? target.textContent = this.model.state.first : target.textContent = this.model.state.second : invalidPlay = true;
+        if (!invalidPlay) {
+            this.model.checkForWin(target);
+            this.rotator();
+        }
+        if (this.model.state.win || Object.keys(this.model.state.board).length === 9) this.model.endGame(this.reset.bind(this), this.updateScore.bind(this)); 
     };
     
     reset(bool) {
         if (bool) {
-            Model.state.first = (Model.state.winner === null) ? 'X' : Model.state.winner;
-            Model.state.second = (Model.state.winner === null) ? 'O' : (Model.state.winner === 'X') ? 'O' : 'X'; 
-            Model.state.playerOne = true;
-            for (let key in Model.state.board) delete Model.state.board[key];
+            this.model.state.first = (this.model.state.winner === null) ? 'X' : this.model.state.winner;
+            this.model.state.second = (this.model.state.winner === null) ? 'O' : (this.model.state.winner === 'X') ? 'O' : 'X'; 
+            this.model.state.playerOne = true;
+            for (let key in this.model.state.board) delete this.model.state.board[key];
             const table = document.getElementsByClassName('tictac')[0].children;
             for (let i = 0; i < table.length; i++) table[i].textContent = "";
         }
     };
     
     rotator() {
-        Model.state.rotation += 90;
-        document.getElementsByClassName('tictac')[0].style.transform = `rotate(${Model.state.rotation}deg)`;
+        this.model.state.rotation += 90;
+        document.getElementsByClassName('tictac')[0].style.transform = `rotate(${this.model.state.rotation}deg)`;
     };
     
     updateScore() {
-        (document.getElementsByClassName(Model.state.winner)[0].textContent = ++Model.state.scoreBoard[Model.state.winner]);
+        (document.getElementsByClassName(this.model.state.winner)[0].textContent = ++this.model.state.scoreBoard[this.model.state.winner]);
     };
 
     setPlayers() {
