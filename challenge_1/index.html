@@ -8,20 +8,30 @@
     <body>
         <div class="title"> Tic-Tac-Toe </div>
         <div class="buttons">
-            <button> Restart </button>
+            <button class="restart"> Restart </button>
+        </div>
+        <div class=inputs>
+            P1 Name: <input type="text" name="p1Name" class="names"><br>
+            P2 Name: <input type="text" name="p2Name" class="names"><br>
+            <button class="submit"> Submit </button>
         </div>
         <div class = "container">
             <div class="tictac">   
                 <div class="row1 column1 square1"></div>
-                <div class="row1 column4 square2"></div>
-                <div class="row1 column7 square3"></div>
+                <div class="row1 column2 square2"></div>
+                <div class="row1 column3 square3"></div>
                 <div class="row4 column1 square4"></div>
-                <div class="row4 column4 square5"></div>
-                <div class="row4 column7 square6"></div>
+                <div class="row4 column2 square5"></div>
+                <div class="row4 column3 square6"></div>
                 <div class="row7 column1 square7"></div>
-                <div class="row7 column4 square8"></div>
-                <div class="row7 column7 square9"></div>
-            </div>  
+                <div class="row7 column2 square8"></div>
+                <div class="row7 column3 square9"></div>
+            </div> 
+            <div class="players"> X vs O </div>
+            <div class="score">
+                <div class="X">0</div>
+                <div class="O">0</div>
+            </div> 
         </div>
     </body>
 </html>
