@@ -1,2 +1,24 @@
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSV Report Generator</title>
+</head>
+<body>
+    <div class="title">CSV REPORT GENERATOR</div>
+    <div class="formContainer">
+        <form action="/upload_json" enctype="text/plain" method="POST" target="responseFrame">
+            <label for="json">Enter your JSON data here:</label>
+            <input name="json" id="json">
+            <input type="submit" value="Submit">
+        </form>
+        <form action="/upload_json" method="POST" target="responseFrame">
+            <input type="file" name="fileJSON" id="fileJSON">
+        </form>
+    </div>
+    <iframe name="responseFrame"></iframe>
+    <script src="app.js"></script>
+</body>
+</html>
 
