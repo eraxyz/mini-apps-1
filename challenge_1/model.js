@@ -19,17 +19,11 @@ class Model {
         this.state.win = (Object.keys(this.state.board).length > 4) ? (this.checkRows(target.classList[0].split('row')[1]) || this.checkColumns(target.classList[1].split('column')[1]) || this.checkDiags()) : false;
     };
 
-    checkRows(row) {
-        (this.state.board['square' + row] === this.state.board['square' + (+row + 1)] && this.state.board['square' + (+row + 2)] === this.state.board['square' + row])
-    };
+    checkRows(row) {return (this.state.board['square' + row] === this.state.board['square' + (+row + 1)] && this.state.board['square' + (+row + 2)] === this.state.board['square' + row])};
     
-    checkColumns(column) {
-        (this.state.board['square' + column] === this.state.board['square' + (+column + 3)] && this.state.board['square' + column] === this.state.board['square' + (+column + 6)])
-    };
+    checkColumns(column) {return (this.state.board['square' + column] === this.state.board['square' + (+column + 3)] && this.state.board['square' + column] === this.state.board['square' + (+column + 6)])};
     
-    checkDiags() {
-        (this.state.board['square1'] === this.state.board['square5'] && this.state.board['square9'] === this.state.board['square5'] && this.state.board['square5']) || (this.state.board['square3'] === this.state.board['square5'] && this.state.board['square7'] === this.state.board['square5'] && this.state.board['square5'])
-    };
+    checkDiags() {return (this.state.board['square1'] === this.state.board['square5'] && this.state.board['square9'] === this.state.board['square5'] && this.state.board['square5']) || (this.state.board['square3'] === this.state.board['square5'] && this.state.board['square7'] === this.state.board['square5'] && this.state.board['square5'])};
     
     endGame(reset, update) {
         this.state.winner = (this.state.playerOne) ? this.state.second : this.state.first;

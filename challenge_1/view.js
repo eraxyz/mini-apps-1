@@ -26,7 +26,7 @@ class View {
     };
     
     rotator() {
-        this.model.state.rotation += 90;
+        this.model.state.rotation = this.model.state.rotation === 270 ? 0 : this.model.state.rotation + 90;
         document.getElementsByClassName('tictac')[0].style.transform = `rotate(${this.model.state.rotation}deg)`;
     };
     
@@ -37,6 +37,4 @@ class View {
     setPlayers() {
         (document.getElementsByClassName('players')[0].textContent = `X (${document.getElementsByClassName('names')[0].value}) vs O (${document.getElementsByClassName('names')[1].value})`)
     };
-
-    
 }
