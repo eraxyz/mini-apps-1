@@ -13,11 +13,17 @@
             <input name="json" id="json">
             <input type="submit" value="Submit">
         </form>
-        <form action="/upload_json" method="POST" target="responseFrame">
+        Or upload JSON file below:
+        <form action="/upload_json" method="POST" enctype="multipart/form-data" target="responseFrame">
             <input type="file" name="fileJSON" id="fileJSON">
+            <input type="submit" value="Submit">
         </form>
     </div>
-    <iframe name="responseFrame"></iframe>
+    <iframe class=response name="responseFrame" style="width: 800px"></iframe>
+    <button class="download"> Download CSV </button>
+    <!-- <a href="/jsonTo.csv" download>
+        Download CSV
+    </a> -->
     <script src="app.js"></script>
 </body>
 </html>
