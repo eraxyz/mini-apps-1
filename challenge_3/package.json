@@ -1,0 +1,27 @@
+{
+  "name": "challenge_3",
+  "version": "1.0.0",
+  "description": "Checkout",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.5",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "sequelize": "^5.1.0",
+    "underscore": "^1.9.1"
+  },
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "^1.0.0"
+  }
+}
