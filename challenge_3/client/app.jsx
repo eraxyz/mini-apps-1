@@ -134,14 +134,11 @@ class Checkout extends React.Component {
                 'expiration': this.state.expiration,
                 'cvv': this.state.cvv,
                 'billingZip': this.state.billingZip
-            }),
-            'success': (response) => {
-                console.log(response);
-                this.setState({
-                    'summary': response
-                });
-            }
-        });
+            })
+        }).then((res) => (res.text()))
+        .then((res) => this.setState({
+            'summary': res
+        }));
     };
 
 };
@@ -157,9 +154,15 @@ class Form1 extends React.Component {
     return (    
     <div> Create an account
         <br/>
-        <input type="text" name="name" onChange={this.props.change.bind(this, "name")}/>
-        <input type="email" name="email" onChange={this.props.change.bind(this, "email")}/>
-        <input type="password" name="password" onChange={this.props.change.bind(this, "password")}/>
+        <label>Name:
+            <input type="text" name="name" onChange={this.props.change.bind(this, "name")}/>
+        </label>
+        <label>Email:
+            <input type="email" name="email" onChange={this.props.change.bind(this, "email")}/>
+        </label>
+        <label>Password:
+            <input type="password" name="password" onChange={this.props.change.bind(this, "password")}/>
+        </label>
         <button onClick={this.props.click} value="Next">Next</button>
     </div>
     )}
@@ -175,12 +178,24 @@ class Form2 extends React.Component {
     return (    
     <div> Shipping Address
         <br/>   
-        <input type="text" name="address" onChange={this.props.change.bind(this, "address")}/>
-        <input type="text" name="address2" onChange={this.props.change.bind(this, "address2")}/>
-        <input type="text" name="city" onChange={this.props.change.bind(this, "city")}/>
-        <input type="text" name="state" onChange={this.props.change.bind(this, "state")}/>
-        <input type="text" name="zip" onChange={this.props.change.bind(this, "zip")}/>
-        <input type="tel" name="phone" onChange={this.props.change.bind(this, "phone")}/>
+        <label>Address:
+            <input type="text" name="address" onChange={this.props.change.bind(this, "address")}/>
+        </label>
+        <label>Address line 2 (optional):
+            <input type="text" name="address2" onChange={this.props.change.bind(this, "address2")}/>
+        </label>
+        <label>State:
+            <input type="text" name="state" onChange={this.props.change.bind(this, "state")}/>
+        </label>
+        <label>City:
+            <input type="text" name="city" onChange={this.props.change.bind(this, "city")}/>
+        </label>
+        <label>Zip:
+            <input type="text" name="zip" onChange={this.props.change.bind(this, "zip")}/>
+        </label>
+        <label>Phone:
+            <input type="tel" name="phone" onChange={this.props.change.bind(this, "phone")}/>
+        </label>
         <input className="f2" type="submit" onClick={this.props.click} value="Next"/>
     </div>
     )}
@@ -196,10 +211,18 @@ class Form3 extends React.Component {
     return (    
     <div> Payment Information
         <br/>
-        <input type="text" name="creditcard" onChange={this.props.change.bind(this, "creditcard")}/>
-        <input type="text" name="cvv" onChange={this.props.change.bind(this, "cvv")}/>
-        <input type="month" name="expiration" onChange={this.props.change.bind(this, "expiration")}/>
-        <input type="text" name="zip" onChange={this.props.change.bind(this, "billingZip")}/>
+        <label>Creditcard #:
+            <input type="text" name="creditcard" onChange={this.props.change.bind(this, "creditcard")}/>
+        </label>
+        <label>CVV:
+            <input type="text" name="cvv" onChange={this.props.change.bind(this, "cvv")}/>
+        </label>
+        <label>Expiration Date:
+            <input type="month" name="expiration" onChange={this.props.change.bind(this, "expiration")}/>
+        </label>
+        <label>Billing Zip:
+            <input type="text" name="zip" onChange={this.props.change.bind(this, "billingZip")}/>
+        </label>
         <input className="f3" type="submit"  onClick={this.props.click} value="Next"/>
     </div>
     )}

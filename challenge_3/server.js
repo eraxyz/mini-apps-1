@@ -55,7 +55,7 @@ app.post('/form2', (req, res) => {
 app.post('/form3', (req, res) => {
     _.extend(userData, req.body);
     updateDB(req.body);
-    res.send(userData);
+    res.send(summarize());
 });
 
 const updateDB = (obj) => {
