@@ -1,0 +1,28 @@
+.board {
+    display: flex;
+}
+
+.empty {
+    border: 1px solid black;
+    width: 48px;
+    height: 48px;
+}
+
+.player1 {
+    border: 1px solid black;
+    width: 48x;
+    height: 48px;
+    background-color: red;
+}
+
+.player2 {
+    border: 1px solid black;
+    width: 48px;
+    height: 48px;
+    background-color: blue;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
